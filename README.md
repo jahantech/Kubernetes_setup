@@ -25,18 +25,26 @@ The version of CoreOS I used for this setup is:
 
 ```
 Install CoreOS
+Set password for core user on the server
+passwd centos
+
+Login remotely into the machine via ssh with core users and password you specified.
+By default coreos installation doesn't have the password. 
+
+So for this setup we will construct cloud-config file and setup a user on installation. 
 sudo coreos-install -d /dev/sda -C stable
 Discovery service: https://discovery.etcd.io
 
 By default in CoreOS instance all ports are open. If you are planning to use this cluster in production you will need to lock the ports down.
 
-Add sudo user to coreos:
-passwd core
 ### Commands 
 sudo su - 
 sudo mkdir -p /opt/kubernetes/bin 
 sudo chown -R core: /opt/kubernetes
 cd /opt/kubernetes
+
+https://coreos.com/kubernetes/docs/latest/getting-started.html
+
 wget https://github.com/kelseyhightower/kubernetes-coreos/releases/download/v0.0.1/kubernetes-coreos.tar.gz
 tar -C bin/ -xvf kubernetes-coreos.tar.gz
 
