@@ -24,6 +24,8 @@ The version of CoreOS I used for this setup is:
 ```
 
 ```
+Install CoreOS
+sudo coreos-install -d /dev/sda -C stable
 Discovery service: https://discovery.etcd.io
 
 By default in CoreOS instance all ports are open. If you are planning to use this cluster in production you will need to lock the ports down.
@@ -37,3 +39,7 @@ sudo chown -R core: /opt/kubernetes
 cd /opt/kubernetes
 wget https://github.com/kelseyhightower/kubernetes-coreos/releases/download/v0.0.1/kubernetes-coreos.tar.gz
 tar -C bin/ -xvf kubernetes-coreos.tar.gz
+
+
+## Reference
+http://www.liberidu.com/blog/2015/04/11/basic-newbie-install-coreos-on-virtualbox-getting-started-with-docker/
