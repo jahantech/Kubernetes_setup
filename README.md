@@ -6,7 +6,7 @@ Kubernetes is a very powerful container management system by Google for large sc
 ## Main Components 
 Following are the main components for a kubernetes system
 
-### Etcd
+### Etcd2
 The etcd project, was developed by the CoreOS team, is a lightweight, distributed key-value store that can be distributed across multiple nodes. Kubernetes uses this service to store and retreive configuration data for each node in the cluster.
 ### Apiserver
 ### Controller-manager
@@ -24,6 +24,12 @@ The version of CoreOS I used for this setup is:
 ```
 
 ```
+Discovery service: https://discovery.etcd.io
+
+By default in CoreOS instance all ports are open. If you are planning to use this cluster in production you will need to lock the ports down.
+
+Add sudo user to coreos:
+passwd core
 ### Commands 
 sudo su - 
 sudo mkdir -p /opt/kubernetes/bin 
